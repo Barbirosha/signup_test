@@ -9,6 +9,7 @@ class CustomTextField extends StatelessWidget {
   final Widget? suffixIcon;
   final String? Function(String?)? validator;
   final Color? textColor;
+  final ValueChanged<String>? onChanged;
 
   const CustomTextField({
     required this.controller,
@@ -18,6 +19,7 @@ class CustomTextField extends StatelessWidget {
     this.suffixIcon,
     this.validator,
     this.textColor,
+    this.onChanged,
     super.key,
   });
 
@@ -85,6 +87,7 @@ class CustomTextField extends StatelessWidget {
       height: 48,
       child: TextField(
         controller: controller,
+        onChanged: onChanged,
         style: TextStyle(
           fontSize: 16.0,
           color: textColor,

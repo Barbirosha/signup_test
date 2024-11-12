@@ -57,6 +57,11 @@ class _SignUpFormState extends State<SignUpForm> {
           controller: _emailController,
           isValid: _isEmailValid,
           hint: AppStrings.emailHint,
+          onChanged: (value) {
+            setState(() {
+              _isEmailValid = null;
+            });
+          },
         ),
         const SizedBox(height: 20),
         CustomTextField(
@@ -64,6 +69,11 @@ class _SignUpFormState extends State<SignUpForm> {
           isValid: _isPasswordValid,
           obscureText: !_isPasswordVisible,
           hint: AppStrings.passwordHint,
+          onChanged: (value) {
+            setState(() {
+              _isPasswordValid = null;
+            });
+          },
           suffixIcon: IconButton(
             icon: Icon(
                 _isPasswordVisible ? Icons.visibility : Icons.visibility_off,
